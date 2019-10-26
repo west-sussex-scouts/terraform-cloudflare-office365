@@ -1,4 +1,4 @@
-variable "domain" {
+variable "zone_id" {
   description = "The DNS zone to add the record to"
   type = "string"
 }
