@@ -16,13 +16,13 @@ resource "cloudflare_record" "webdir-online" {
 
 resource "cloudflare_record" "sip-tls" {
   zone_id = var.zone_id
-  name     = "${var.name}"
+  name     = var.name
   type     = "SRV"
 
   data = {
     service  = "_sip"
     proto    = "_tls"
-    name     = "${var.name}"
+    name     = var.name
     priority = 100
     weight   = 1
     port     = 443
@@ -32,13 +32,13 @@ resource "cloudflare_record" "sip-tls" {
 
 resource "cloudflare_record" "sipfederationtls-tcp" {
   zone_id = var.zone_id
-  name     = "${var.name}"
+  name     = var.name
   type     = "SRV"
 
   data = {
     service  = "_sipfederationtls"
     proto    = "_tcp"
-    name     = "${var.name}"
+    name     = var.name
     priority = 100
     weight   = 1
     port     = 5061
